@@ -8,6 +8,7 @@ const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_USERNAME = process.env.DB_USERNAME;
+const PORT = process.env.PORT;
 
 // Instantiate the database and connect to it
 const db = knex({
@@ -49,6 +50,6 @@ app.put("/image", (req, res) => { image.HandleImage(req, res, db) })
 // Clarifai API Call Route/EndPoint
 app.post("/imageURL", (req, res) => { image.HandleAPICall(req, res) })
 
-app.listen(4000, () => {
-    console.log("Server is running on port 4000");
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 })
