@@ -8,7 +8,7 @@ const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_USERNAME = process.env.DB_USERNAME;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 // Instantiate the database and connect to it
 const db = knex({
