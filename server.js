@@ -9,16 +9,19 @@ const image = require("./controllers/image");
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_USERNAME = process.env.DB_USERNAME;
 const PORT = process.env.PORT || 4000;
+const DB_HOST = process.env.DB_HOST;
+const DB_NAME = process.env.DB_NAME;
+const DB_PORT = process.env.DB_PORT;
 
 // Instantiate the database and connect to it
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'dpg-cf810l6n6mplr40lvio0-a',
-      port : 5432,
+      host : DB_HOST,
+      port : DB_PORT,
       user : DB_USERNAME,
       password : DB_PASSWORD,
-      database : 'smart_brain_7u8i'
+      database : DB_NAME
     }
 });
 
